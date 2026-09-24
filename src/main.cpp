@@ -32,6 +32,17 @@ void setup() {
     Serial.println(sensorValue);
 
     delay(500);
+
+    //CSV header creation
+    dataFile = SD.open("sensor.csv", FILE_WRITE);
+    if(dataFile){
+        dataFile.println("Time,Value");
+        dataFile.close();
+    }
+    else {
+        Serial.println("File not found");
+    }
+
 }
  
 void loop() {
