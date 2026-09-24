@@ -57,7 +57,6 @@ void loop() {
     Serial.print("Time = ");
     Serial.println(timeSeconds);
 
-    delay(500);
 
     dataFile = SD.open("sensor.csv", FILE_WRITE);
     if(dataFile){
